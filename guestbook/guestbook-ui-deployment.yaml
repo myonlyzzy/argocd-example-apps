@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: blink
 spec:
   replicas: 3
   revisionHistoryLimit: 3
@@ -16,7 +16,6 @@ spec:
         app: guestbook-ui
         apps: job-c1fd4a09-54dd-44cf-9e75-jobmanager
     spec:
-      hostNetwork: true      
       containers:
       - image: myonlyzzy/ks-guestbook-demo:0.2
         resources:
