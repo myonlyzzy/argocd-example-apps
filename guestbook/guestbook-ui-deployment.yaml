@@ -14,9 +14,15 @@ spec:
     metadata:
       labels:
         app: guestbook-ui
+        apps: job-c1fd4a09-54dd-44cf-9e75-jobmanager
     spec:
+      hostNetwork: true      
       containers:
       - image: myonlyzzy/ks-guestbook-demo:0.2
+        resources:
+          requests:
+            cpu: "1"
+            memory: 400Mi
         name: guestbook-ui
         ports:
         - containerPort: 80
